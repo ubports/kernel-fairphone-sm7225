@@ -407,7 +407,7 @@ hdd_mic_flush_work(struct hdd_adapter *adapter)
 	qdf_flush_work(&adapter->mic_work.work);
 }
 
-#ifdef MODULE
+#if 1
 /**
  * hdd_mic_enable_work() - enable mic error work
  * @adapter: Pointer to hdd adapter
@@ -11401,7 +11401,7 @@ void hdd_psoc_idle_timer_stop(struct hdd_context *hdd_ctx)
 	hdd_debug("Stopped psoc idle timer");
 }
 
-#ifdef MODULE
+#if 1
 /**
  * __hdd_psoc_idle_shutdown() - perform an idle shutdown on the given psoc
  * @hdd_ctx: the hdd context which should be shutdown
