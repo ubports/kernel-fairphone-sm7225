@@ -4109,7 +4109,11 @@ static int aw8695_vibrator_init(struct aw8695 *aw8695)
     pr_info("%s enter\n", __func__);
 
 #ifdef TIMED_OUTPUT
+#ifdef CONFIG_LEDS_QPNP_VIBRATOR_LDO
     aw8695->to_dev.name = "vibrator_aw8695";
+#else
+    aw8695->to_dev.name = "vibrator";
+#endif
     aw8695->to_dev.get_time = aw8695_vibrator_get_time;
     aw8695->to_dev.enable = aw8695_vibrator_enable;
 
@@ -4128,7 +4132,11 @@ static int aw8695_vibrator_init(struct aw8695 *aw8695)
         return ret;
     }
 #else
+#ifdef CONFIG_LEDS_QPNP_VIBRATOR_LDO
     aw8695->cdev.name = "vibrator_aw8695";
+#else
+    aw8695->cdev.name = "vibrator";
+#endif
     aw8695->cdev.brightness_get = aw8695_haptic_brightness_get;
     aw8695->cdev.brightness_set = aw8695_haptic_brightness_set;
 
