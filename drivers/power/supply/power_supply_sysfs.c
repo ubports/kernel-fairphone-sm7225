@@ -83,7 +83,7 @@ static const char * const power_supply_scope_text[] = {
 
 #if defined(CONFIG_TCT_PM7250_COMMON)
 static const char * const power_supply_usbc_text[] = {
-	"Nothing attached", "Sink attached", "Powered cable w/ sink",
+	"Mains", "Sink attached", "Powered cable w/ sink",
 	"Debug Accessory", "Audio Adapter", "Powered cable w/o sink",
 	"Source Debug Accessory (FMB)",
 	"Source attached (default current)",
